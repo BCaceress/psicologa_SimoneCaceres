@@ -1,0 +1,29 @@
+/* Animação para a tela FAQ (fade-in com scale) */
+.fade-in-scale {
+    animation: fadeInScale 1.5s ease forwards;
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  /* Estilos para a área de resposta com animação de expansão mais lenta e fluida */
+  .answer-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1.5s ease-in-out, opacity 1.5s ease-in-out;
+  }
+  
+  .answer-content.expanded {
+    max-height: 500px; 
+    opacity: 1;
+  }
+  

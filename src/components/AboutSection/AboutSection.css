@@ -1,0 +1,24 @@
+/* Animação fade-in para a seção */
+.fade-in-scale {
+  animation: fadeInScale 1.5s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Moldura lúdica para a imagem sem animação */
+.playful-frame {
+  border: 5px dashed #ffffff; /* Borda em branco para contraste */
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

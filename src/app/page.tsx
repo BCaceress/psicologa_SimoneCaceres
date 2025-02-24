@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import AboutSection from "@/components/AboutSection/AboutSection";
 import ServicesSection from "@/components/ServicesSection/ServicesSection";
+import TestimonialsSection from "@/components/TestimonialsSection/TestimonialsSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import ContactSection from "@/components/ContactSection/ContactSection";
 import Footer from "@/components/Footer/Footer";
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
       <NavBar />
       <AboutSection />
       <ServicesSection />
+      <TestimonialsSection />
       <FAQSection />
       <ContactSection />
       <Footer />

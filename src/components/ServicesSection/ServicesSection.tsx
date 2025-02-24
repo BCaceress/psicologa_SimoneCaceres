@@ -13,7 +13,10 @@ import { motion } from "framer-motion";
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="w-full py-20 relative bg-[#f3ece3] bg-[url('/images/fundo_marrom.png')] bg-cover bg-no-repeat bg-blend-overlay">
+    <section
+      id="services"
+      className="w-full py-20 relative bg-[#f3ece3] bg-[url('/images/fundo_marrom.png')] bg-cover bg-no-repeat bg-blend-overlay"
+    >
       <div className="absolute inset-0 bg-no-repeat bg-cover bg-center z-10 opacity-30"></div>
 
       <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-20">
@@ -29,7 +32,7 @@ const ServicesSection: React.FC = () => {
           {[
             {
               title: "Terapia Ocupacional",
-              icon: <FaHandsHelping className="mr-2 text-3xl" />, 
+              icon: <FaHandsHelping className="mr-2 text-3xl" />,
               image: "/images/psico1.jpg",
               bgColor: "bg-[#F8B642]",
               description:
@@ -37,7 +40,7 @@ const ServicesSection: React.FC = () => {
             },
             {
               title: "Sessões Privadas",
-              icon: <FaUserShield className="mr-2 text-3xl" />, 
+              icon: <FaUserShield className="mr-2 text-3xl" />,
               image: "/images/psico2.jpg",
               bgColor: "bg-[#5494c7]",
               description:
@@ -45,7 +48,7 @@ const ServicesSection: React.FC = () => {
             },
             {
               title: "Terapia de Fala",
-              icon: <FaCommentDots className="mr-2 text-3xl" />, 
+              icon: <FaCommentDots className="mr-2 text-3xl" />,
               image: "/images/psico3.jpg",
               bgColor: "bg-[#cc826e]",
               description:
@@ -79,58 +82,79 @@ const ServicesSection: React.FC = () => {
           <h2 className="text-4xl font-extrabold text-gray-800 mb-8">
             Nossa Abordagem
           </h2>
-
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+          {/* Alteração: items-start para alinhar os círculos no topo */}
+          <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-16">
             {[
               {
                 title: "Agende uma Consulta",
                 icon: <FaCalendarCheck />,
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
+                  "Agende sua consulta comigo e dê o primeiro passo rumo ao autoconhecimento. Estou aqui para acolher você e ajudar a encontrar seu equilíbrio emocional.",
               },
               {
                 title: "Encontre-se com o Terapeuta",
                 icon: <FaUserMd />,
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
+                  "Marque um encontro para que possamos conversar em um espaço seguro, onde você pode compartilhar suas vivências e desafios. Juntos, vamos traçar o caminho para sua evolução.",
               },
               {
                 title: "Avaliação Diagnóstica",
                 icon: <FaClipboardList />,
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
+                  "Durante a avaliação, vou compreender suas necessidades e planejar um atendimento personalizado que promova seu crescimento e bem-estar.",
               },
               {
                 title: "Inicie a Terapia",
                 icon: <FaSpa />,
                 description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
+                  "Comece sua jornada terapêutica com o meu apoio. Através de um acompanhamento acolhedor e profissional, trabalharemos juntos para transformar sua vida.",
               },
             ].map((step, index, array) => (
-              <React.Fragment key={index}>
+              <div key={index} className="relative">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className="p-8 flex flex-col items-center text-center max-w-xs"
+                  className="p-2 flex flex-col items-center text-center max-w-xs"
                 >
                   <div className="w-24 h-24 mb-4 flex items-center justify-center bg-[#5494c7] rounded-full shadow-md">
                     <span className="text-5xl text-white">{step.icon}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  <h3
+                    style={{
+                      fontFamily: '"Signika Negative", sans-serif',
+                      fontSize: "22px",
+                      lineHeight: "24px",
+                      textAlign: "center",
+                      letterSpacing: "normal",
+                      color: "#5e667a",
+                    }}
+                    className="mb-2"
+                  >
                     {step.title}
                   </h3>
-                  <p className="text-gray-600">{step.description}</p>
+                  <p
+                    style={{
+                      fontFamily: "Roboto, sans-serif",
+                      fontSize: "16px",
+                      lineHeight: "24px",
+                      textAlign: "center",
+                      letterSpacing: "normal",
+                      color: "#7a7a7a",
+                    }}
+                  >
+                    {step.description}
+                  </p>
                 </motion.div>
                 {index < array.length - 1 && (
                   <img
                     src="/images/flecha_direita.png"
                     alt="Flecha"
-                    className="h-12 w-auto mx-4 hidden md:block"
+                    className="absolute right-[-80px] top-1/4 transform -translate-y-1/2 hidden md:block z-10 h-8 w-auto"
                   />
                 )}
-              </React.Fragment>
+              </div>
             ))}
           </div>
         </div>

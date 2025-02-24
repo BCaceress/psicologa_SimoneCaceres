@@ -11,6 +11,7 @@ import {
 const Contact: React.FC = () => {
   return (
     <section
+      id="contact"
       className="w-full min-h-screen bg-[#A3B8B4] text-white"
       style={{ fontFamily: '"Signika Negative", sans-serif' }}
     >
